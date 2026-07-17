@@ -40,15 +40,18 @@ UniSync is a full-stack web application that allows students to upload their uni
 
 ### Dashboard
 
-(Add screenshot here)
+<img width="977" height="1029" alt="Screenshot 2026-07-17 at 6 38 10 PM" src="https://github.com/user-attachments/assets/ec6334a4-b5a5-4eb3-85c6-45bfd7653b2c" />
+
 
 ### Weekly Calendar
 
-(Add screenshot here)
+<img width="1150" height="584" alt="Screenshot 2026-07-17 at 6 38 25 PM" src="https://github.com/user-attachments/assets/21e8d7db-ea8f-4646-aa2b-b5fc655cb02b" />
+
 
 ### Schedule Comparison
 
-(Add screenshot here)
+![Uploading Screenshot 2026-07-17 at 6.38.44 PM.png…]()
+
 
 ---
 
