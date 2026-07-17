@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UniSync
 
-## Getting Started
+> Transform university course schedules into beautiful, recurring calendar events with one upload.
 
-First, run the development server:
+UniSync is a full-stack web application that allows students to upload their university schedule, automatically parse classes, visualize their semester, compare schedule revisions, and synchronize recurring events with Google Calendar.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Features
+
+### Schedule Upload
+- Upload university schedule PDFs
+- Automatic class extraction
+- Supports recurring weekly schedules
+- Stores multiple schedule versions
+
+### Calendar Sync
+- Google Calendar integration
+- One-click recurring event creation
+- Intelligent updates (no duplicate events)
+- Remove synced events anytime
+- Apple Calendar (.ics) export
+
+### Schedule Management
+- Interactive weekly calendar
+- Upload history
+- Semester version comparison
+- Detect added, removed, and modified classes
+
+### Dashboard
+- Meeting statistics
+- Course statistics
+- Earliest and latest classes
+- Busiest day of the week
+- Schedule overview
+
+---
+
+## Screenshots
+
+### Dashboard
+
+(Add screenshot here)
+
+### Weekly Calendar
+
+(Add screenshot here)
+
+### Schedule Comparison
+
+(Add screenshot here)
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Clerk Authentication
+- Axios
+
+### Backend
+
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- Google Calendar API
+
+### Other
+
+- Google OAuth 2.0
+- iCalendar (.ics)
+- PDF Schedule Parsing
+
+---
+
+## Architecture
+
+```text
+University PDF
+        │
+        ▼
+ PDF Parser
+        │
+        ▼
+ Structured Schedule
+        │
+        ├────────► PostgreSQL
+        │
+        ├────────► Weekly Calendar
+        │
+        ├────────► Schedule Comparison
+        │
+        ▼
+ Google Calendar Sync
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Current Functionality
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- PDF upload
+- Persistent schedules
+- Multiple semester versions
+- Version comparison
+- Google Calendar synchronization
+- Google Calendar event removal
+- Apple Calendar export
+- Weekly calendar visualization
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Planned Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Calendar selection before syncing
+- Last sync timestamp
+- Rich schedule comparison UI
+- Dark/Light themes
+- Mobile responsiveness
+- Multi-calendar support
+- Semester sharing
+- Automatic schedule conflict detection
+- Exam schedule support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cd backend
+
+python -m venv venv
+
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+```
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+---
+
+## Environment Variables
+
+```text
+DATABASE_URL=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+```
+
+---
+
+## License
+
+MIT
